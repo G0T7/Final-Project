@@ -1,0 +1,46 @@
+/* src/Navbar.css */
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #000; /* Nav background color */
+  border: 2px solid #fff;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff; /* Link color */
+  text-decoration: none;
+  font-size: 14px;
+  display: block; /* Ensure full width for clickable area */
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+nav ul {
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 0; /* Remove extra padding */
+  margin: 0;
+}
+
+nav ul li {
+  margin: 5px 0; /* Adjust spacing between items */
+  width: 100%; /* Full width for each item */
+}
+
+nav ul li a {
+  font-size: 16px; /* Adjust font size for readability on smaller screens */
+  padding: 15px; /* Adjust padding for better touch targets */
+  text-align: center; /* Center text within the link */
+}
+}
+/*<h1>Press Start 2P</h1>*/

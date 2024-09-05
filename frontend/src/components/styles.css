@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Navbar Styles */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  border: 2px solid #fff;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Game Board Styles */
+.snake {
+  background-color: #000;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.food {
+  background-color: #fff;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+/* Form Styles */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  position: relative;
+  padding: 20px;
+  background-color: #222;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.start-button,
+.quit-button,
+.restart-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover,
+.quit-button:hover,
+.restart-button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Dropdown Styles */
+.dropdown-label {
+  display: block;
+  margin: 10px 0;
+}
+
+.dropdown {
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+/* Start Screen Styles */
+.start-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 40px);
+}
+
+.start-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.start-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-container button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Game Over Screen Styles */
+.game-over-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10; /* Ensure it appears above the gameboard */
+}
+
+.game-over-screen h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.game-over-screen p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.game-over-screen button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.game-over-screen button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.scoreboard h2 {
+  margin-bottom: 10px;
+}
+
+.scoreboard p {
+  margin: 5px 0;
+}
+
+/* Leaderboard Styles */
+.leaderboard-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #222;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 10px;
+  border: 2px solid #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.leaderboard-table th {
+  background-color: #444;
+}
+
+.leaderboard-table td {
+  text-align: center;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .start-button,
+  .quit-button,
+  .restart-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .dropdown {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .start-button,
+  .quit-button,
+  .restart-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .dropdown {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* Canvas Container */
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border: 8px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  outline: 2px solid #000;
+  background-color: #000000;
+}
+
+/* Game Over Animation */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.game-over {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+
+/* Profile Container */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-container label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.profile-container input[type="text"],
+.profile-container input[type="email"],
+.profile-container input[type="password"],
+.profile-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.profile-container input[type="file"] {
+  padding: 5px;
+}
+
+.profile-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.profile-container button:hover {
+  background-color: #45a049;
+}
+
+.profile-container .error-message {
+  color: #ff0000; /* Red for errors */
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.profile-container .success-message {
+  color: #4caf50; /* Green for success messages */
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.guide-box {
+  margin-left: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000000;
+}
+
+.guide-box h2 {
+  margin-top: 0;
+}
+
+.guide-box p {
+  margin: 5px 0;
+}
+
+.guide-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.guide-box li {
+  margin: 5px 0;
+}
+
+.quit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #d9534f;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quit-button:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
