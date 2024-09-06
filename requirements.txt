@@ -11,6 +11,7 @@ channels-redis==4.2.0
 charset-normalizer==3.3.2
 click==8.1.7
 cryptography==43.0.0
+daphne
 Django==5.0.6
 django-cors-headers==4.3.1
 django-oauth-toolkit==2.4.0
