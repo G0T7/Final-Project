@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: django-backend
+    env: python
+    plan: starter
+    buildCommand: cd backend && pip install -r requirements.txt && python manage.py migrate
+    startCommand: cd backend && daphne backend.asgi:application --port $PORT --bind 0.0.0.0 -v2
+    envVars:
+      - key: PGDATABASE
+        value: <your-database-name>
+      - key: PGUSER
+        value: <your-database-user>
+      - key: PGPASSWORD
+        value: <your-database-password>
+      - key: PGHOST
+        value: <your-database-host>
+      - key: PGPORT
+        value: '5432'
+      - key: SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: 'false'
+
+  - type: static
+    name: react-frontend
+    env: node
+    plan: starter
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
