@@ -7,12 +7,16 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.0/howto/deployment/asgi/
 """
 
-# backend/asgi.py
 import os
+import sys
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
 import game.routing
+
+# Add debugging statements
+print("Current working directory:", os.getcwd())
+print("Python path:", sys.path)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
@@ -24,4 +28,3 @@ application = ProtocolTypeRouter({
         )
     ),
 })
-
