@@ -3,28 +3,30 @@ services:
     name: django-backend
     runtime: python
     plan: starter
-    buildCommand: cd backend && pip install -r requirements.txt && python manage.py migrate
-    startCommand: cd backend && daphne backend.asgi:application --port $PORT --bind 0.0.0.0 -v2
+    buildCommand: pip install -r requirements.txt && python manage.py migrate
+    startCommand: daphne backend.asgi:application --port $PORT --bind 0.0.0.0 -v2
     envVars:
       - key: PGDATABASE
-        value: <your-database-name>
+        value: neondb
       - key: PGUSER
-        value: <your-database-user>
+        value: neondb_owner
       - key: PGPASSWORD
-        value: <your-database-password>
+        value: d4VpECP0JuOS
       - key: PGHOST
-        value: <your-database-host>
+        value: ep-lucky-glade-a1crcutq.ap-southeast-1.aws.neon.tech
       - key: PGPORT
         value: '5432'
-      - key: SECRET_KEY
-        sync: false
+      - key: DJANGO_SECRET_KEY
+        value: your-secret-key
       - key: DEBUG
-        value: 'false'
+        value: 'True'
+      - key: ALLOWED_HOSTS
+        value: '127.0.0.1,localhost'
   - type: web
     name: react-frontend
     runtime: node
     plan: starter
-    buildCommand: cd frontend && npm install && npm run build
+    buildCommand: npm install && npm run build
     startCommand: serve -s frontend/build
     envVars:
       - key: NODE_ENV
