@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: starter
     buildCommand: pip install -r requirements.txt && python manage.py migrate
-    startCommand: daphne backend.asgi:application --port $PORT --bind 0.0.0.0 -v2
+    startCommand: daphne snakegame.backend.asgi:application --port $PORT --bind 0.0.0.0 -v2
     envVars:
       - key: PGDATABASE
         value: neondb
