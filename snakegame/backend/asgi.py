@@ -14,10 +14,6 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
 import game.routing
 
-# Add debugging statements
-print("Current working directory:", os.getcwd())
-print("Python path:", sys.path)
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
 application = ProtocolTypeRouter({
