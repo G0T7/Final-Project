@@ -74,7 +74,7 @@ TEMPLATES = [
 ]
 
 # ASGI configuration
-ASGI_APPLICATION = 'backend.asgi.application'
+ASGI_APPLICATION = 'snakegame.backend.asgi.application'
 
 # Channel layers configuration
 CHANNEL_LAYERS = {
