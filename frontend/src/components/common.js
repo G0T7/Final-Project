@@ -1,1 +1,2 @@
-exports.backend_url='http://localhost:8000/';
+// src/components/common.js
+exports.backend_url = 'https://retro-mini-snake-game-obxi.onrender.com/';
