@@ -1,3 +1,5 @@
+#game/urls.py
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
@@ -17,5 +19,5 @@ urlpatterns = [
     path('ai-move/', views.ai_move, name='ai_move'),
     path('start-game/', views.start_game, name='start_game'),
     path('restart-game/', views.restart_game, name='restart_game'),
-    path('save_score/', views.save_score, name='save_score'),  # Added URL pattern
+    path('save_score/', views.save_score, name='save_score'),
 ]

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'game',  # Your app
     'channels',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
