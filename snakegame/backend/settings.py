@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 DEBUG = getenv('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,retro-mini-snake-game.onrender.com').split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -42,9 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 ]
-
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
@@ -75,7 +73,6 @@ TEMPLATES = [
 
 # ASGI configuration
 ASGI_APPLICATION = 'backend.asgi.application'
-
 
 # Channel layers configuration
 CHANNEL_LAYERS = {
@@ -128,9 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Update STATICFILES_DIRS if necessary
-STATICFILES_DIRS = ['C:/Users/DaveN/OneDrive/Desktop/Final Project/Final Project/snakegame/Staticsfiles']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'build', 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -154,3 +150,8 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Debugging ALLOWED_HOSTS (optional)
+import logging
+logger = logging.getLogger(__name__)
+logger.info(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
