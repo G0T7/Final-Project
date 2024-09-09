@@ -40,16 +40,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React development server
+    "https://retro-mini-snake-game.onrender.com",  # Production
 ]
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 # URL configuration
 ROOT_URLCONF = 'backend.urls'
@@ -150,6 +148,26 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Logging configuration (optional)
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'django.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # Debugging ALLOWED_HOSTS (optional)
 import logging
