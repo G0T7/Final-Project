@@ -14,7 +14,7 @@ const Leaderboard = () => {
         headers: { Authorization: `Token ${token}` }
       };
       try {
-        const response = await axios.get('http://localhost:8000/api/leaderboard/', config);
+        const response = await axios.get('https://retro-mini-snake-game-obxi.onrender.com/api/leaderboard/', config);
         console.log('Leaderboard data:', response.data); // Debugging line
         setLeaderboard(response.data);
       } catch (error) {
