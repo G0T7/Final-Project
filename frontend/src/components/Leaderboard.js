@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import * as common from './common.js';
 import './styles.css';
 
 const Leaderboard = () => {
@@ -14,7 +15,7 @@ const Leaderboard = () => {
         headers: { Authorization: `Token ${token}` }
       };
       try {
-        const response = await axios.get('https://retro-mini-snake-game-obxi.onrender.com/api/leaderboard/', config);
+        const response = await axios.get(`${common.backend_url}api/leaderboard/`, config);
         console.log('Leaderboard data:', response.data); // Debugging line
         setLeaderboard(response.data);
       } catch (error) {
