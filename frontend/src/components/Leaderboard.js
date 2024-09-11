@@ -17,8 +17,8 @@ const Leaderboard = () => {
       try {
         console.log('Fetching leaderboard...');
         const response = await axios.get(`${common.backend_url}api/leaderboard/`, config);
-        console.log('Leaderboard data:', response.data);
-        setLeaderboard(response.data);
+        console.log('API response:', response);
+        setLeaderboard(response?.data || []); // Use optional chaining and provide a fallback value
       } catch (error) {
         setError('Error fetching leaderboard');
         console.error('Error fetching leaderboard:', error.response ? error.response.data : error.message);
