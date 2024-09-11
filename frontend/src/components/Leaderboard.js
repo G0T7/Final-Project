@@ -10,6 +10,13 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       const token = localStorage.getItem('token');
+      console.log('Retrieved token:', token);
+      if (!token) {
+        setError('No token found. Please log in.');
+        setLoading(false);
+        return;
+      }
+
       const config = {
         headers: { Authorization: `Token ${token}` }
       };

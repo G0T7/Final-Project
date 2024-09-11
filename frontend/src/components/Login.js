@@ -28,6 +28,7 @@ const LoginForm = () => {
         window.location.href = '/';
       })
       .catch(error => {
+        console.error('Login error:', error.response ? error.response.data : error.message);
         setError(error.response.data.error);
       });
   };
