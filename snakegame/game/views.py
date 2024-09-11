@@ -113,6 +113,9 @@ def user_profile_view(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def leaderboard_view(request):
+    """
+    API endpoint for retrieving the leaderboard.
+    """
     scores = GameScore.objects.all().order_by('-score')[:10]  # Top 10 scores
     serializer = GameScoreSerializer(scores, many=True)
     return Response(serializer.data)
