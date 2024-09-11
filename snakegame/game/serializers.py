@@ -20,3 +20,9 @@ class GameScoreSerializer(serializers.ModelSerializer):
     class Meta:
         model = GameScore
         fields = ['player', 'score', 'date', 'difficulty']
+
+    def create(self, validated_data):
+        player_data = validated_data.pop('player')
+        user = User.objects.create(**player_data)
+        game_score = GameScore.objects.create(player=user, **validated_data)
+        return game_score
