@@ -47,7 +47,8 @@ MIDDLEWARE = [
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React development server
-    "https://retro-mini-snake-game-obxi.onrender.com",  # Production
+    "https://retro-mini-snake-game-obxi.onrender.com", 
+    "https://retro-mini-snake-game.onrender.com", # Production
 ]
 
 # URL configuration
