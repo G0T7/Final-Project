@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import * as common from './common.js';
 import './styles.css';
 
 const Leaderboard = () => {
@@ -10,15 +9,16 @@ const Leaderboard = () => {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      const token = localStorage.getItem('token') || '426984fce1f52b06e3d400f9c2c2884e00399647'; // Use the provided token if not in localStorage
+      const token = localStorage.getItem('token');
       const config = {
         headers: { Authorization: `Token ${token}` }
       };
+      console.log('Config:', config);
       try {
         console.log('Fetching leaderboard...');
-        const response = await axios.get(`${common.backend_url}api/leaderboard/`, config);
+        const response = await axios.get('https://retro-mini-snake-game.onrender.com/api/leaderboard/', config);
         console.log('API response:', response);
-        setLeaderboard(response?.data || []); // Use optional chaining and provide a fallback value
+        setLeaderboard(response?.data || []);
       } catch (error) {
         setError('Error fetching leaderboard');
         console.error('Error fetching leaderboard:', error.response ? error.response.data : error.message);
