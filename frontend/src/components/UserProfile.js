@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import * as common from './common.js';
 import './styles.css';
 
 const UserProfile = () => {
@@ -17,8 +16,9 @@ const UserProfile = () => {
       const config = {
         headers: { Authorization: `Token ${token}` }
       };
+      console.log('Config:', config);
       try {
-        const response = await axios.get(`${common.backend_url}api/user-profile/`, config);
+        const response = await axios.get('https://retro-mini-snake-game.onrender.com/api/user-profile/', config);
         console.log('API response:', response.data); // Log the entire response data
 
         // Check if response.data and response.data.user are defined
@@ -46,7 +46,7 @@ const UserProfile = () => {
       headers: { Authorization: `Token ${token}` }
     };
     try {
-      await axios.put(`${common.backend_url}api/user-profile/`, {
+      await axios.put('https://retro-mini-snake-game.onrender.com/api/user-profile/', {
         username,
         email,
         password
