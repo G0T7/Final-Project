@@ -1,3 +1,5 @@
+//src/components/Leaderboard.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import * as common from './common.js';
@@ -16,11 +18,11 @@ const Leaderboard = () => {
       };
       try {
         const response = await axios.get(`${common.backend_url}api/leaderboard/`, config);
-        console.log('Leaderboard data:', response.data); // Debugging line
+        console.log('Leaderboard data:', response.data);
         setLeaderboard(response.data);
       } catch (error) {
         setError('Error fetching leaderboard');
-        console.error('Error fetching leaderboard:', error.response || error.message);
+        console.error('Error fetching leaderboard:', error.response ? error.response.data : error.message);
       } finally {
         setLoading(false);
       }
@@ -52,7 +54,7 @@ const Leaderboard = () => {
           {leaderboard.map((entry, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{entry.player.username || 'Unknown'}</td> {/* Adjust according to your data structure */}
+              <td>{entry.player.username || 'Unknown'}</td>
               <td>{entry.score}</td>
             </tr>
           ))}

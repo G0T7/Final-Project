@@ -9,6 +9,9 @@ from .models import GameScore, UserProfile
 from .serializers import GameScoreSerializer, UserProfileSerializer, UserSerializer
 from rest_framework.authtoken.models import Token
 from .ai import SnakeAI
+import logging
+
+logger = logging.getLogger(__name__)
 
 @api_view(['GET'])
 def home_view(request):
@@ -78,6 +81,7 @@ def login_view(request):
         token, created = Token.objects.get_or_create(user=user)
         return Response({"token": token.key, "username": user.username})
     else:
+        logger.warning(f"Failed login attempt for username: {username}")
         return Response({"error": "Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT'])
@@ -125,7 +129,7 @@ def submit_score(request):
     user = request.user
     score = request.data.get('score')
     
-    if score is not None:
+    if score is not None and isinstance(score, int) and score >= 0:
         GameScore.objects.create(player=user, score=score)
         return Response({"message": "Score submitted successfully"}, status=status.HTTP_201_CREATED)
     
@@ -143,15 +147,18 @@ def save_score(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def ai_move(request):
     """
-    API endpoint for getting the next move from the AI.
+    API endpoint for AI move.
     """
     data = request.data
     board_size = data.get('board_size')
     snake_position = data.get('snake_position')
     food_position = data.get('food_position')
+    
+    if not board_size or not snake_position or not food_position:
+        return Response({'error': 'Missing required parameters'}, status=status.HTTP_400_BAD_REQUEST)
     
     ai = SnakeAI(board_size, snake_position, food_position)
     next_move = ai.get_next_move()
