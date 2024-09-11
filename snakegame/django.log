@@ -17217,3 +17217,54 @@ File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\dj
                 AND pg_catalog.pg_table_is_visible(c.oid)
         ; args=None; alias=default
 (0.078) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\middleware.py first seen with mtime 1718124143.1695192
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\authtoken\migrations\0001_initial.py first seen with mtime 1718119419.4429448
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1716909979.0839744
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1716909983.597716
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1716909979.1058912
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1716909979.1022246
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1716909977.36677
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\__init__.py first seen with mtime 1718124143.1666133
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1716909979.089623
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1716909979.6579487
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1716909979.098212
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\common.py first seen with mtime 1716909984.3739493
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1716909982.5563836
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\media_types.py first seen with mtime 1718124143.1686137
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\string_utils.py first seen with mtime 1718124143.1720395
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\migrations\graph.py first seen with mtime 1716909984.1027322
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\csrf.py first seen with mtime 1716909984.6137803
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\migrations\loader.py first seen with mtime 1716909984.1053724
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1716909977.36677
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1716909977.3622248
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1716909977.3648043
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\authtoken\migrations\0003_tokenproxy.py first seen with mtime 1718119419.4449465
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1716909982.5613987
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\cache\backends\locmem.py first seen with mtime 1716909983.667138
+File C:\Users\DaveN\OneDrive\Documents\DI_BOOTCAMP_STAGE\Week 21\Final Project\snakegame\game\migrations\0003_remove_userprofile_avatar.py first seen with mtime 1725621546.9210806
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\authtoken\migrations\0002_auto_20160226_1747.py first seen with mtime 1718119419.4439456
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\migrations\executor.py first seen with mtime 1716909984.1017454
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\responders.py first seen with mtime 1718124143.1711287
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1716909979.100185
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\migrations\recorder.py first seen with mtime 1716909984.1113951
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1716909982.9668145
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\middleware\clickjacking.py first seen with mtime 1716909984.3723605
+File C:\Users\DaveN\OneDrive\Documents\DI_BOOTCAMP_STAGE\Week 21\Final Project\snakegame\game\migrations\__init__.py first seen with mtime 1722957422.0109377
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1716909982.9678493
+File C:\Users\DaveN\OneDrive\Documents\DI_BOOTCAMP_STAGE\Week 21\Final Project\snakegame\game\migrations\0001_initial.py first seen with mtime 1722957699.4248781
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1716909979.6558695
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1716909979.1040983
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1716909979.0925598
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1716909979.0961368
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1716909981.561341
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1716909982.5479188
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1716909979.0885842
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\authtoken\migrations\0004_alter_tokenproxy_options.py first seen with mtime 1718119419.445948
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\rest_framework\authtoken\migrations\__init__.py first seen with mtime 1718119419.445948
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1716909979.0855114
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\base.py first seen with mtime 1718124143.1675189
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py first seen with mtime 1716909984.1800175
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1716909979.6579487
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1716909979.1012042
+File C:\Users\DaveN\OneDrive\Documents\DI_BOOTCAMP_STAGE\Week 21\Final Project\snakegame\game\migrations\0002_alter_gamescore_score.py first seen with mtime 1723562241.1443028
+File C:\Users\DaveN\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1716909979.0940983
