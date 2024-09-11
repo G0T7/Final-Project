@@ -10,7 +10,7 @@ const Leaderboard = () => {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('token') || '426984fce1f52b06e3d400f9c2c2884e00399647'; // Use the provided token if not in localStorage
       const config = {
         headers: { Authorization: `Token ${token}` }
       };
