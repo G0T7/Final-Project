@@ -28,8 +28,8 @@ const LoginForm = () => {
         console.log('Login successful:', response.data);
         setMessage('Login successful!');
         localStorage.setItem('token', response.data.token);
-        // Redirect to the leaderboard page after successful login
-        setTimeout(() => navigate('/leaderboard'), 2000); // Optional delay for message display
+        // Redirect to the homepage after successful login
+        setTimeout(() => navigate('/'), 2000); // Optional delay for message display
       })
       .catch(error => {
         console.log(error);
