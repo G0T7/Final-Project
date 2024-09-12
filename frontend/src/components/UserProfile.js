@@ -1,3 +1,5 @@
+//src/components/Userprofile.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './styles.css';
@@ -9,6 +11,8 @@ const UserProfile = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showTick, setShowTick] = useState(false);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -40,6 +44,10 @@ const UserProfile = () => {
     fetchProfile();
   }, []);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleUpdate = async () => {
     const token = localStorage.getItem('token');
     const config = {
@@ -53,6 +61,10 @@ const UserProfile = () => {
       }, config);
       setError('');
       alert('Profile updated successfully');
+      setShowTick(true);
+      setTimeout(() => {
+        setShowTick(false);
+      }, 1000);
     } catch (error) {
       console.error('Update profile error:', error.response ? error.response.data : error.message);
       setError('Error updating profile.');
@@ -93,12 +105,17 @@ const UserProfile = () => {
       <label>
         Password:
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <button type="button" onClick={togglePasswordVisibility}>
+          {showPassword ? "Hide" : "Show"}
+        </button>
       </label>
       <button onClick={handleUpdate} className="start-button">Update Profile</button>
+      <div className={`tick-animation ${showTick ? 'show' : ''}`}></div>
+      {error && <p>{error}</p>}
     </div>
   );
 };

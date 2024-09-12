@@ -298,6 +298,75 @@ nav ul li a {
   }
 }
 
+/* Profile Styles */
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #222;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.profile-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.profile-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-container button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/* Tick Animation Styles */
+.tick-animation {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-color: green;
+  clip-path: polygon(14% 44%, 0% 65%, 50% 100%, 100% 0%, 80% 0%, 40% 80%);
+}
+
+.tick-animation.show {
+  display: inline-block;
+  animation: tick 1s ease-in-out;
+}
+
+@keyframes tick {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
 /* Canvas Container */
 .canvas-container {
   display: flex;
@@ -336,7 +405,6 @@ canvas {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
-
 
 /* Profile Container */
 .profile-container {
