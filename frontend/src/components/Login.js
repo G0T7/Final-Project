@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.css';
-import * as common from './common.js';
+import { backend_url } from './commonBackend.js';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -19,7 +19,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(common.backend_url + 'api/login/', { username, password })
+    axios.post(backend_url + 'api/login/', { username, password })
       .then(response => {
         localStorage.setItem('token', response.data.token);
         console.log('Login successful:', response.data);

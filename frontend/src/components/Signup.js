@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import './styles.css';
-import * as common from './common.js';
+import * as common from './commonFrontend.js';
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
