@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+// src/components/Login.js
+
+import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { backend_url } from './commonBackend';
 import './styles.css';
-import { backend_url } from './commonBackend.js';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -9,33 +12,29 @@ const LoginForm = () => {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      setMessage('You are currently logged in.');
-      console.log('Retrieved token:', token);
-    }
-  }, []);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(backend_url + 'api/login/', { username, password })
+    const ctx = {
+      username: username,
+      password: password
+    };
+
+    const url = `${backend_url}/api/login/`;
+
+    axios.post(url, ctx)
       .then(response => {
-        localStorage.setItem('token', response.data.token);
         console.log('Login successful:', response.data);
-        setMessage('Login successful! Redirecting to home page...');
-        window.location.href = '/';
+        setMessage('Login successful!');
+        localStorage.setItem('token', response.data.token);
+        // Redirect to the leaderboard page after successful login
+        setTimeout(() => navigate('/leaderboard'), 2000); // Optional delay for message display
       })
       .catch(error => {
-        console.error('Login error:', error.response ? error.response.data : error.message);
-        setError(error.response.data.error);
+        console.log(error);
+        setError(error.response.data.error || 'Login failed. Please try again.');
       });
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setMessage('You have logged out.');
-    console.log('Token removed');
   };
 
   return (
@@ -62,7 +61,6 @@ const LoginForm = () => {
       <button type="submit" className="start-button">Login</button>
       {error && <p>{error}</p>}
       {message && <p>{message}</p>}
-      {localStorage.getItem('token') && <button onClick={handleLogout} className="start-button">Logout</button>}
     </form>
   );
 };

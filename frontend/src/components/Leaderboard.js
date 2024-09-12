@@ -1,7 +1,9 @@
+// src/components/Leaderboard.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { backend_url } from './commonBackend';
 import './styles.css';
-import { backend_url } from './commonBackend.js';
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
@@ -24,7 +26,7 @@ const Leaderboard = () => {
       console.log('Config:', config);
       try {
         console.log('Fetching leaderboard...');
-        const response = await axios.get(backend_url + 'api/leaderboard/', config);
+        const response = await axios.get(`${backend_url}/api/leaderboard/`, config);
         console.log('API response:', response);
         setLeaderboard(response?.data || []);
       } catch (error) {

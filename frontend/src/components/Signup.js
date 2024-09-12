@@ -1,8 +1,9 @@
+
 // src/components/Signup.js
 
 import axios from 'axios';
 import './styles.css';
-import * as common from './commonFrontend.js';
+import { backend_url } from './commonBackend'; // Correct import
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
@@ -23,8 +24,8 @@ const SignupForm = () => {
       email: email
     };
 
-    const url = common.backend_url + 'api/signup/';
-    
+    const url = `${backend_url}/api/signup/`; // Use template literals for URL
+
     axios.post(url, ctx)
       .then(response => {
         console.log('Signup successful:', response.data);
