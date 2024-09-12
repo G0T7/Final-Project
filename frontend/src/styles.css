@@ -408,9 +408,9 @@ canvas {
 
 /* Profile Container */
 .profile-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
   background-color: #666565;
   border-radius: 10px;
   color: #fff;
