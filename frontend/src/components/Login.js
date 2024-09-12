@@ -1,5 +1,3 @@
-// src/components/Login.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.css';
@@ -15,6 +13,7 @@ const LoginForm = () => {
     const token = localStorage.getItem('token');
     if (token) {
       setMessage('You are currently logged in.');
+      console.log('Retrieved token:', token);
     }
   }, []);
 
@@ -36,6 +35,7 @@ const LoginForm = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setMessage('You have logged out.');
+    console.log('Token removed');
   };
 
   return (

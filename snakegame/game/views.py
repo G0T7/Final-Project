@@ -71,14 +71,12 @@ def signup_view(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_view(request):
-    """
-    API endpoint for user login.
-    """
     username = request.data.get('username')
     password = request.data.get('password')
     user = authenticate(username=username, password=password)
     if user is not None:
         token, created = Token.objects.get_or_create(user=user)
+        logger.info(f"User {username} logged in successfully")
         return Response({"token": token.key, "username": user.username})
     else:
         logger.warning(f"Failed login attempt for username: {username}")
