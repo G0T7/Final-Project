@@ -1,6 +1,3 @@
-
-// src/components/Signup.js
-
 import axios from 'axios';
 import './styles.css';
 import { backend_url } from './commonBackend'; // Correct import
@@ -31,7 +28,10 @@ const SignupForm = () => {
         console.log('Signup successful:', response.data);
         setMessage('Signup successful! You can now log in.');
         // Redirect to the login page after successful signup
-        setTimeout(() => navigate('/login'), 2000); // Optional delay for message display
+        setTimeout(() => {
+          console.log('Navigating to login page');
+          navigate('/login');
+        }, 2000); // Optional delay for message display
       })
       .catch(error => {
         console.log(error);
