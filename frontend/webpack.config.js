@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
@@ -41,19 +40,22 @@ module.exports = {
   },
   plugins: [
     new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-          ['svgo', {
-            plugins: [
-              {
-                removeViewBox: false,
-              },
-            ],
-          }],
-        ],
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminMinify,
+        options: {
+          plugins: [
+            ['gifsicle', { interlaced: true }],
+            ['jpegtran', { progressive: true }],
+            ['optipng', { optimizationLevel: 5 }],
+            ['svgo', {
+              plugins: [
+                {
+                  removeViewBox: false,
+                },
+              ],
+            }],
+          ],
+        },
       },
     }),
   ],
